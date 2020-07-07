@@ -47,6 +47,21 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+#project-card{
+  padding-left: 1rem;
+  align-items: center;
+  margin: auto;
+  width : 20rem;
+  margin-left: 1 rem;
+  
+}
+#project{
+  padding-left: 4rem;
+  margin: 4 rem;
+  width : 20rem;
+  margin-left: 1 rem;
+  
+}
 body {
   margin: 0;
   font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
