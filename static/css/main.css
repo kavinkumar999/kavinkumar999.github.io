@@ -20,5 +20,27 @@ body {
 .social-media-image {
   width: 20px;
   height: 20px;
-  filter: invert();
+  filter: invert(1);
+}
+.connect {
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+}
+.connect > .label {
+  position: absolute;
+  right: 0;
+  bottom: 30rem;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  transform-origin: 100% 0;
+}
+.social-media {
+  position: absolute;
+  right: 0;
+  bottom: 15rem;
+}
+.social-media a {
+  display: block;
+  margin-bottom: 20px;
 }
