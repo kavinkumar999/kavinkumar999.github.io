@@ -1,5 +1,5 @@
 var options = {
-  strings: ['SoftWare Developer', 'Open source enthusiastic'],
+  strings: ['Love ❤️ to contribute Open Source', 'Passionate to learn New Skills', 'Love to Travel Adventures places'],
   typeSpeed: 100,
   backSpeed: 100,
   smartBackspace: true,
