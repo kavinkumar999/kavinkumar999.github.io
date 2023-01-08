@@ -49,3 +49,15 @@ body {
   margin-top: 100px;
   font-size: 50px;
 }
+.home-avatar {
+  position: relative;
+  margin-right: 100px;
+}
+.blob {
+  position: absolute;
+  z-index: -1;
+  left: -51%;
+  height: 38rem;
+  top: -14%;
+  transform: skewX(10deg);
+}
