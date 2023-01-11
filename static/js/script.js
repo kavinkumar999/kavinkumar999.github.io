@@ -1,8 +1,7 @@
 var options = {
   strings: ['Love ❤️ to contribute Open Source', 'Passionate to learn New Skills', 'Love to Travel Adventures places'],
   typeSpeed: 100,
-  backSpeed: 100,
-  smartBackspace: true,
+  backSpeed: 20,
   loop: true,
 };
 
