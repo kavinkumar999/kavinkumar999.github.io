@@ -88,6 +88,9 @@ nav a{
   top: -14%;
   transform: skewX(10deg);
 }
+.home-avatar:hover .blob {
+  transform: translateY(40px);
+}
 .avatar {
   margin-right: -38px;
   padding: 40px 0px 0 20px;
