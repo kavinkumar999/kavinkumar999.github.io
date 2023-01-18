@@ -24,7 +24,7 @@ body {
 nav a{
   color: var(--secondary-color) !important;
   font-weight: 500 !important;
-  font-size: 18px;
+  font-size: 18px !important;
 }
 .custom-pad {
   padding: 100px 0px;
@@ -38,7 +38,7 @@ nav a{
   font-size: 40px
 }
 .home-title > span {
-  color: cyan;
+  color: #eb9905;
   font-size: 50px;
 }
 .home-subtitle {
