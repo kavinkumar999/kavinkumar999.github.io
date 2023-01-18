@@ -1,10 +1,30 @@
+/* :root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --theme-filter: 1;
+} */
+.ligth-theme {
+  --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --theme-filter: 0;
+  --muted-text: hsl(0deg 5% 19% / 65%);
+}
+.dark-theme {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --theme-filter: 1;
+  --muted-text: hsla(0,0%,100%,.65);
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  background: #000;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
-nav {
-  font-weight: 500;
+nav a{
+  color: var(--secondary-color) !important;
+  font-weight: 500 !important;
+  font-size: 18px;
 }
 .custom-pad {
   padding: 100px 0px;
@@ -22,12 +42,12 @@ nav {
   font-size: 50px;
 }
 .home-subtitle {
-  font-weight: 300;
+  font-weight: 400;
 }
 .social-media-image {
   width: 20px;
   height: 20px;
-  filter: invert(1);
+  filter: invert(var(--theme-filter));
 }
 .connect {
   position: absolute;
@@ -81,5 +101,9 @@ nav {
   height: 500px;
 }
 .color-muted {
-  color: hsla(0,0%,100%,.65) !important;
+  color: var(--muted-text) !important;
+}
+#theme {
+  cursor: pointer;
+  height: 30px;
 }
