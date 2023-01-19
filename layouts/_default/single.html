@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {{- partial "head.html" . -}}
-    </head>
-    <body class="dark-theme">
-      {{ partial "header.html" . }}
-      <section class="text-center empty-text color-muted">
-        {{ .Content }}
-      </section>
-      {{ partial "footer.html" . }}
-    </body>
-</html>
+{{ define "main" }}
+<section class="text-center empty-text color-muted">
+  {{ .Content }}
+</section>
+{{ end }}
