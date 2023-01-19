@@ -52,7 +52,7 @@ nav a{
   font-size: 40px
 }
 .home-title > span {
-  color: #eb9905;
+  color: #f35252;
   font-size: 50px;
 }
 .home-subtitle {
@@ -106,8 +106,8 @@ nav a{
 }
 .avatar {
   margin-right: -38px;
-  padding: 40px 0px 0 20px;
-  scale: 0.85;
+  padding: 40px 0px 0 0px;
+  scale: 0.75;
 }
 .empty-text {
   display: flex;
