@@ -4,10 +4,9 @@
   </div>
   <div class="d-flex align-items-center">
     <a class="nav-link  active" href="/">Home</a>
-    <a class="nav-link" href="/about">About</a>
-    <a class="nav-link" href="/experience">Experience</a>
-    <a class="nav-link" href="/projects">Projects</a>
-    <a class="nav-link" href="/contact">Contact</a>
+    {{ range .Site.RegularPages.Reverse }}
+      <a class="nav-link" href="{{.RelPermalink}}">{{.Title}}</a>
+    {{ end }}
     <button id="theme-toggle" accesskey="t" title="(Alt + T)" onclick="setMode()">
       <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
