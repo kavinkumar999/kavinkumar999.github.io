@@ -1,6 +1,6 @@
 const LIGHT_MODE = 'light-theme';
 var options = {
-  strings: ['Love ❤️ to contribute Open Source', 'Passionate to learn New Skills', 'Love to Travel Adventures places'],
+  strings: ['Love ♥ to contribute Open Source', 'Passionate to learn New Skills', 'Love to Travel Adventures places'],
   typeSpeed: 100,
   backSpeed: 20,
   loop: true,

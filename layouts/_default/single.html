@@ -1,5 +1,13 @@
 {{ define "main" }}
-<section class="text-center empty-text color-muted">
-  {{ .Content }}
-</section>
+
+  {{ if .Params.isempty}}
+    <section class="text-center empty-text color-muted">
+      {{ .Content }}
+    </section>
+  {{ end }}
+  {{ if eq .Title "Projects" }}
+    {{ partial "projects.html" . }}
+    
+  {{ end }}
+
 {{ end }}
