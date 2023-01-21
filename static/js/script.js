@@ -17,8 +17,3 @@ function setMode() {
     window.localStorage.setItem("theme", "dark-theme");
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const parentElement = document.getElementById("Home");
-  parentElement.style.height = (window.innerHeight - 87) + "px";
-});
