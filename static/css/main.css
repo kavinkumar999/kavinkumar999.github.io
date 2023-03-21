@@ -46,6 +46,9 @@ nav a{
 .custom-pad {
   padding: 100px 0px;
 }
+#Home {
+  margin-bottom: 6rem;
+}
 .home-container {
   margin-top: 100px;
   display: flex;
@@ -67,7 +70,7 @@ nav a{
   filter: invert(var(--theme-filter)) !important;
 }
 .connect {
-  position: absolute;
+  position: relative;
   right: 30px;
   bottom: 0;
 }
@@ -89,9 +92,7 @@ nav a{
   margin-bottom: 20px;
 }
 .typed-word {
-  position: absolute;
-  bottom: 0;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
 }
 .home-avatar {
