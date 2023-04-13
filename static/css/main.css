@@ -140,8 +140,7 @@ nav a{
   transform: scale(1.005);
   box-shadow: 5px 5px 8px 0 var(--shadow-color);
 }
-.card-top {
+.iamge-wrapper-card {
   position: relative;
-  height: 300px;
-  width: 300px;
+  width: 150px;
 }
