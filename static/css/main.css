@@ -13,6 +13,13 @@
   --shadow-color: rgb(119 113 113 / 65%);
   --muted-text: hsl(0deg 5% 19% / 65%);
 }
+@media screen and (max-width: 1000px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
 body {
   font-family: 'Roboto', sans-serif;
   background: var(--primary-color) !important;
@@ -32,12 +39,6 @@ body:not(.light-theme) #moon {
   border: 0;
   margin: auto 4px;
 }
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
 nav a{
   color: var(--secondary-color) !important;
   font-weight: 500 !important;
@@ -46,14 +47,12 @@ nav a{
 .custom-pad {
   padding: 100px 0px;
 }
-#Home {
-  margin-bottom: 6rem;
-}
 .home-container {
-  margin-top: 100px;
-  display: flex;
-  padding: 0 7rem;
   justify-content: center;
+  margin-top: 5rem;
+  display: flex;
+  gap: 3rem;
+  padding: 0 4rem;
 }
 .home-title {
   font-size: 40px
@@ -93,18 +92,23 @@ nav a{
   margin-bottom: 20px;
 }
 .typed-word {
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+  width: 100%;
   font-size: 40px;
   font-weight: 400;
 }
 .home-avatar {
+  width: max-content;
+  height: max-content;
   position: relative;
-  margin-right: 100px;
 }
 .blob {
   position: absolute;
   z-index: -1;
   left: -3rem;
-  width: 35rem;
+  width: 29rem;
   top: 0;
   transform: skewX(10deg);
 }
