@@ -20,10 +20,7 @@
   }
 }
 #Home {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+  margin-top: 5rem;
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -52,11 +49,11 @@ nav a{
 .home-container {
   justify-content: center;
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
   padding: 0 4rem;
 }
 .font-large {
-  font-size: 40px
+  font-size: 2rem
 }
 .social-media-image {
   width: 20px;
@@ -74,9 +71,6 @@ nav a{
 .social-media a {
   display: block;
   margin-bottom: 20px;
-}
-.home-avatar {
-  transform: scale(0.80);
 }
 .home-avatar:hover .blob {
   transform: translateY(40px);
