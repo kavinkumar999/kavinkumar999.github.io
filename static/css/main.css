@@ -78,9 +78,6 @@ nav a{
   display: block;
   margin-bottom: 20px;
 }
-.home-avatar:hover .blob {
-  transform: translateY(40px);
-}
 .empty-text {
   display: flex;
   justify-content: center;
