@@ -100,3 +100,13 @@ nav a{
   transform: scale(1.005);
   box-shadow: 5px 5px 8px 0 var(--shadow-color);
 }
+.card-container  a, .card-container  a:hover, .card-container  a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.card-img-top {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
