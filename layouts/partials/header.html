@@ -3,10 +3,12 @@
     <a class="nav-link" href="#">Kavin</a>
   </div>
   <div class="d-flex align-items-center">
-    <a class="nav-link  active" href="/">Home</a>
-    {{ range .Site.RegularPages.Reverse }}
-      <a class="nav-link" href="{{.RelPermalink}}">{{.Title}}</a>
-    {{ end }}
+    {{ $currentURL := .Permalink }}
+    {{ $path := urls.Parse $currentURL }}
+    <a class="nav-link{{ if eq $path.Path "/" }} active{{end}}" href="/">Home</a>
+    <a class="nav-link{{ if eq $path.Path "/projects/" }} active{{end}}" href="/projects">Projects</a>
+    <a class="nav-link{{ if eq $path.Path "/about/" }} active{{end}}" href="/about">About</a>
+    <a class="nav-link{{ if eq $path.Path "/contact/" }} active{{end}}" href="/contact/">Contact</a>
     <button id="theme-toggle" accesskey="t" title="(Alt + T)" onclick="setMode()">
       <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

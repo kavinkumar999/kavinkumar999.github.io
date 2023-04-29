@@ -19,6 +19,13 @@
     align-items: center;
   }
 }
+
+.nav-link, .nav-link:focus, a {
+  color: var(--secondary-color) !important;
+}
+.active {
+  color: var(--theme-color) !important;
+}
 #Home {
   margin-top: 5rem;
 }
@@ -42,7 +49,6 @@ body:not(.light-theme) #moon {
   margin: auto 4px;
 }
 nav a{
-  color: var(--secondary-color) !important;
   font-weight: 500 !important;
   font-size: 18px !important;
 }
