@@ -1,6 +1,6 @@
 const LIGHT_MODE = 'light-theme';
 var options = {
-  strings: ['Kavin Kumar', 'Web Developer'],
+  strings: ['I love to automate everything ♡︎', 'I love to play with Numbers ⭐', 'I love to explore new innovations ⚡'],
   typeSpeed: 100,
   backSpeed: 20,
   loop: true,
