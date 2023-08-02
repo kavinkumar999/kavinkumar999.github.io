@@ -7,7 +7,8 @@
   {{ end }}
   {{ if eq .Title "Projects" }}
     {{ partial "projects.html" . }}
-    
+  {{else if eq .Title "About"}}
+    {{ partial "about.html" . }}
   {{ end }}
 
 {{ end }}
