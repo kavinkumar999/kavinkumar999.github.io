@@ -18,6 +18,27 @@
     flex-direction: column;
     align-items: center;
   }
+  .connect .social-media  {
+    margin: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .home-content {
+    align-items: center;
+  }
+  .connect {
+    position: relative !important;
+    right: 0 !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .home-avatar {
+    width: 330px;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
 
 .nav-link, .nav-link:focus, a {
@@ -32,6 +53,7 @@
   align-items: center;
   gap: 4rem;
   margin-top: 5rem;
+  font-weight: 300;
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -50,17 +72,14 @@ body:not(.light-theme) #moon {
 #theme-toggle {
   background: 0;
   border: 0;
-  margin: auto 4px;
 }
 nav a{
   font-weight: 500 !important;
   font-size: 18px !important;
 }
 .home-container {
-  justify-content: center;
   display: flex;
   gap: 4rem;
-  padding: 0 4rem;
 }
 .font-large {
   font-size: 2rem
