@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #000;
+  --primary-color: #1f2022;
   --secondary-color: #f5f5f5;
   --theme-filter: 1;
   --theme-color: #f35252;
@@ -8,7 +8,7 @@
 }
 .light-theme {
   --primary-color: #ffffff;
-  --secondary-color: #000;
+  --secondary-color: #1f2022;
   --theme-filter: 0;
   --shadow-color: rgb(119 113 113 / 65%);
   --muted-text: hsl(0deg 5% 19% / 65%);
