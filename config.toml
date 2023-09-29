@@ -1,10 +1,8 @@
-baseurl = "https://example.com"
+baseurl = "https://kavinkumar999.github.io"
 languageCode = "en-us"
 title = "Kavin Kumar"
 theme = "hugo-tania"
 paginate = 6
-
-disqusShortname = "https-hugo-tania-netlify-app"
 
 [params]
   # Emoji will show before the blog title on site navbar.
