@@ -1,9 +1,28 @@
 
-
+@media screen and (max-width: 800px) {
+  .home-page {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .content {
+    align-items: center;
+  }
+}
+.home-page {
+  display: flex;
+  justify-content: space-around;
+}
 body {
   color: var(--font-color);
 }
 .content {
+  h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
   color: var(--font-color);
   font-size: 2rem;
   display: flex;
