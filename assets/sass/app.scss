@@ -1,7 +1,19 @@
+
+
 body {
   color: var(--font-color);
 }
 .content {
   color: var(--font-color);
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  div {
+    font-weight: 600;
+  }
 }
-
+.theme-color {
+  color: var(--theme-color);
+}
