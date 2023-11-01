@@ -1,5 +1,5 @@
-<div class="container mt-5">
-  <section id="home" class="segment">
+<section>
+  <div id="home" class="container segment">
     <p  style="transition-delay: 100ms;" class="hidden">Hi, my name is</p>
     <h1 style="transition-delay: 200ms;" class="mt-3 hidden">Kavin Kumar</h1>
     <h1 style="transition-delay: 300ms;" data-head="title-content" class="mt-0 hidden">I build things for web</h1>
@@ -18,8 +18,8 @@
         <img src="{{ .Site.BaseURL }}svg/email.svg" class="social-media-image" alt="email">
       </a>
     </div>
-  </section>
-  <section id="about" class="mt-5 segment">
+  </div>
+  <div id="about" class="container" style="padding-top: 6rem;">
     <h3 class="section-heading hidden"> ✨ About Me</h3>
     <div class="d-flex">
       <div>
@@ -27,11 +27,11 @@
         <p class="hidden" style="transition-delay: 200ms;">Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.</p>
         <p class="hidden" style="transition-delay: 300ms;">I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.</p>
       </div>
-      <img class="avatar" style="height: 300px; width: 350px" srcset="png/dev.png"  alt="avatar">
+      {{/*  <img class="avatar" style="height: 300px; width: 350px" srcset="png/dev.png"  alt="avatar">  */}}
     </div>
-  </section>
-  <section id="Experience" class="mt-5 segment">
-    <h3 class="section-heading hidden"> ✨ Experience</h3>
+  </div>
+  <div id="Experience" class="container " style="padding-top: 5rem;">
+    <h3 class="hidden"> ✨ Experience <span class="section-heading"></span></h3>
     <div class="experience-band"></div>
-  </section>
-</div>
+  </div>
+</section>

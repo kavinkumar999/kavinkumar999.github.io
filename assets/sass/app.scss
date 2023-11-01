@@ -76,13 +76,13 @@
 }
 
 .segment {
-  padding-top: 15vh;
   display: flex;
   -webkit-box-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   flex-direction: column;
-  min-height: 70vh;
-  height: 70vh;
+  min-height: 80vh;
+  height: 80vh;
 }
 .section-heading::after {
   content: "";
