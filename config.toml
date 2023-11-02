@@ -55,7 +55,7 @@ paginate = 6
 [menu]
 [[menu.header]]
   name = "About"
-  url = "/about/"
+  url = "#about"
 [[menu.header]]
   name = "Blog"
   url = "/blog/"
