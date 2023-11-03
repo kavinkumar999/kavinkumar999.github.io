@@ -64,8 +64,11 @@ paginate = 6
   url = "/blog/"
 
 [markup]
-[markup.highlight]
-  noClasses = false
-  lineNos = true
-[markup.goldmark.renderer]
-  unsafe = true
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
