@@ -34,16 +34,16 @@ paginate = 6
   # Show your social information with icon on index bio with `_index.md` content.
   [params.socialOptions]
     dev-to = ""
-    email = ""
+    email = "kavinkumarnkm007@gmail.com"
     facebook = ""
-    github = ""
+    github = "https://github.com/kavinkumar999"
     instagram = ""
-    linkedin = ""
+    linkedin = "https://www.linkedin.com/in/kavinkumar999/"
     medium = ""
     stack-overflow = ""
     steam = ""
     telegram = ""
-    twitter = ""
+    twitter = "https://twitter.com/kavinkumar999"
     twitch = ""
     whatsapp = ""
   
