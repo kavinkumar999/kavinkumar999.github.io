@@ -146,3 +146,9 @@ body {
      direction: ltr;
   }
 }
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  overflow: hidden;
+}
