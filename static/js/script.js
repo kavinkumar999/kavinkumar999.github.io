@@ -13,3 +13,7 @@ const observer = new IntersectionObserver(callback);
 sections.forEach((section) => {
   observer.observe(section);
 });
+function playSound() {
+  var audio = new Audio('mp3/gun.mp3');
+  audio.play();
+}
