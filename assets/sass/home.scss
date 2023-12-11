@@ -19,8 +19,14 @@
     flex-direction: column-reverse;
   }
   .avatar {
-    width: 350px;
-    align-self: center;
+    width: 300px;
+    height: 250px;
+  }
+  #about.segment {
+    min-height: 91rem !important;
+  }
+  .experience-band:before {
+    height: 700px !important;
   }
 }
 
@@ -40,9 +46,12 @@
   min-height: 30rem;
 }
 #Experience.segment {
-  min-height: 20rem;
-  height: 20rem;
+ margin-top: 10rem;
 }
+#about.segment {
+  min-height: 58rem;
+}
+
 .social-media {
   display: flex;
   gap: 4rem;
@@ -68,7 +77,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 58rem;
   height: 80vh;
 }
 body {
