@@ -5,7 +5,7 @@
               <a class="brand" href="{{ relURL "/" }}">
                   {{ with .Site.Params.titleEmoji }}
                   <span class="emoji">
-                    <img src="png/rocket.png">
+                     <img src="{{ "png/rocket.png" | relURL }}" alt="Rocket Image" />
                       {{/*  {{ . }}  */}}
                   </span>
                   {{ end }}
