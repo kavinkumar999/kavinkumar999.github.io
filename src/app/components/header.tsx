@@ -1,17 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../../public/png/logo.png';
 
 export default function Headers() {
   return (
     <header className="w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto md:px-16 px-6">
         <div className="flex justify-between items-center py-6">
           <div className="flex items-center space-x-4">
             <Link href="/">
-              <Image src={Logo} alt="Logo" width={32} height={32} priority />
+              <Image src={"/png/logo.png"} alt="Logo" width={32} height={32} priority />
             </Link>
-            <h1 className="text-2xl font-bold text-white"><Link href="/">Kavin Kumar</Link></h1>
+            <h1 className="text-2xl font-bold text-white"><Link href="/">Kavin</Link></h1>
           </div>
           <nav>
             <ul className="flex items-center space-x-6 font-semibold text-white">

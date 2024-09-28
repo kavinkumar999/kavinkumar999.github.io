@@ -10,35 +10,35 @@ export default function Main() {
   return (
     <div className='flex justify-between'>
       <div>
-        <Slide delay={0.1}>
-          <p className="text-sm mb-2">Hi, my name is</p>
-        </Slide>
         <Slide delay={0.2}>
-          <h1 className="text-5xl font-bold mb-4">Kavin Kumar</h1>
+          <h1 className="text-5xl font-bold mb-8">Hey, I'm <span className='text-green-300'>Kavin Kumar</span></h1>
         </Slide>
         <Slide delay={0.3}>
           <h2 className="text-3xl text-gray-400 mb-6">I build things for web</h2>
         </Slide>
         <Slide delay={0.4}>
-          <p className="text-lg mb-8">
-            Hey! I'm a software engineer who specializes in creating high-scale wonders. Currently, I'm
-            diving headfirst into the exciting world of AI and machine learning models. I'm also a big fan of
-            open source and love contributing to the community. Let's continue this tech adventure
-            together! 🚀
+          <p className="text-lg  text-gray-400 mb-8">
+          A software engineer who crafts the high-scale wonders 🌟. Currently, I'm diving headfirst into the world of AI and machine learning.
+          transforming ideas 💡 into meaningful solutions and I do everything to keep the software up and running 🚀
+          </p>
+        </Slide>
+        <Slide delay={0.4}>
+          <p className="text-xl mb-8 ">
+            Making Impossible to Possible using <span className='text-green-300 text-2xl mx-3'>1's</span> and <span className='text-green-300 text-2xl mx-3'>0's</span>
           </p>
         </Slide>
         <Slide delay={0.5}>
-          <div className="flex space-x-6">
-            <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+          <div className="flex space-x-12">
+            <Link href="https://linkedin.com/in/kavinkumar999" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <LinkedIn />
             </Link>
-            <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <Link href="https://github.com/kavinkumar999" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <Github />
             </Link>
-            <Link href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <Link href="https://twitter.com/kavin999" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <Twitter />
             </Link>
-            <Link href="mailto:your.email@example.com" className="hover:opacity-80 transition-opacity">
+            <Link href="mailto:kavinkumarnkm007@gmail.com" className="hover:opacity-80 transition-opacity">
               <Email />
             </Link>
           </div>
