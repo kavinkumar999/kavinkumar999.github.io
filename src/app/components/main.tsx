@@ -18,8 +18,8 @@ export default function Main() {
         </Slide>
         <Slide delay={0.4}>
           <p className="text-lg  text-gray-400 mb-8">
-          A software engineer who crafts the high-scale wonders 🌟. Currently, I'm diving headfirst into the world of AI and machine learning.
-          transforming ideas 💡 into meaningful solutions and I do everything to keep the software up and running 🚀
+          A software engineer who crafts the high-scale wonders 🌟. Currently, I'm diving headfirst into the world of AI and machine learning,
+          transforming ideas 💡 into meaningful solutions and love to automate everything and anything 🚀
           </p>
         </Slide>
         <Slide delay={0.4}>
