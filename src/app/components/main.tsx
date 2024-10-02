@@ -11,7 +11,7 @@ export default function Main() {
     <div className='flex justify-between'>
       <div>
         <Slide delay={0.2}>
-          <h1 className="text-5xl font-bold mb-8">Hey, I'm <span className='text-green-300'>Kavin Kumar</span></h1>
+          <h1 className="text-5xl font-bold mb-8">Hey, I'm <span className='text-primary'>Kavin Kumar</span></h1>
         </Slide>
         <Slide delay={0.3}>
           <h2 className="text-3xl text-gray-400 mb-6">I build things for web</h2>
@@ -24,7 +24,7 @@ export default function Main() {
         </Slide>
         <Slide delay={0.4}>
           <p className="text-xl mb-8 ">
-            Making Impossible to Possible using <span className='text-green-300 text-2xl mx-3'>1's</span> and <span className='text-green-300 text-2xl mx-3'>0's</span>
+            Making Impossible to Possible using <span className='text-primary text-2xl mx-3'>1's</span> and <span className='text-primary text-2xl mx-3'>0's</span>
           </p>
         </Slide>
         <Slide delay={0.5}>

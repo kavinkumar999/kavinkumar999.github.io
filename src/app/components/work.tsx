@@ -50,7 +50,7 @@ const ExperienceItem = ({ logo, company, position, start, end, description }: Ex
       <h4 className="text-md font-medium text-gray-300">{position}</h4>
       <p className="text-sm text-gray-400 mb-4 flex items-center mt-2">
         <Calendar size={14} className="mr-1" />
-        {start} - <span className={end === 'PRESENT' ? 'text-green-300' : ''}>{end}</span>
+        {start} - <span className={end === 'PRESENT' ? 'text-primary' : ''}>{end}</span>
       </p>
       <p className="text-sm text-gray-300 mt-2">{description}</p>
     </div>
@@ -61,7 +61,7 @@ const WorkExperienceTimeline = () => {
   
   return (
     <>
-      <h2 className="text-3xl mt-40 mb-16 font-semibold">Work Experience(<span className="text-green-300">#</span>)</h2>
+      <h2 className="text-3xl mt-40 mb-16 font-semibold">Work Experience(<span className="text-primary">#</span>)</h2>
       {experiences.map((exp, index) => (
         <ExperienceItem
           key={index}
