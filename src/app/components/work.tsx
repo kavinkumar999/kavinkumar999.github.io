@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import { Span } from 'next/dist/trace';
 
 const experiences: Array<ExperienceItem> = [
   {
-    logo: "/png/zoho-dark.svg",
+    logo: {
+      url: "/png/zoho-dark.svg",
+      width: 100,
+      height: 60
+    },
     company: "Zoho Corporation",
     position: "Software Engineer",
     start: "SEP 11, 2024",
@@ -13,7 +16,11 @@ const experiences: Array<ExperienceItem> = [
     description: "Working with a cross-functional team in a fast-paced environment to build, maintain and test a user-centric fintech solution using modern technologies",
   },
   {
-    logo: "/png/aerele.png",
+    logo: {
+      url: "/png/aerele.png",
+      width: 100,
+      height: 50
+    },
     company: "Aerele Technologies",
     position: "Software Developer Intern",
     start: "SEP 11, 2024",
@@ -21,8 +28,13 @@ const experiences: Array<ExperienceItem> = [
     description: "Volunteer writer for freeCodeCamp, producing technical articles around topics like nextjs, react, and JavaScript.",
   }
 ];
+interface Logo {
+  url: string,
+  width: number,
+  height: number
+}
 interface ExperienceItem {
-  logo: string,
+  logo: Logo,
   company: string,
   position: string,
   start: string,
@@ -32,7 +44,7 @@ interface ExperienceItem {
 
 const ExperienceItem = ({ logo, company, position, start, end, description }: ExperienceItem) => (
   <div className="flex items-start mb-14 relative">
-    <Image src={logo} alt="Logo" width={120} height={120} priority className='mr-6' />
+    <Image src={logo.url} alt="Logo" width={logo.width} height={logo.height} priority className='mr-6' />
     <div className="max-w-2xl">
       <h3 className="text-lg font-semibold text-white">{company}</h3>
       <h4 className="text-md font-medium text-gray-300">{position}</h4>
