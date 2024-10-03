@@ -26,10 +26,10 @@ export default function Main() {
           </h1>
         </Slide>
         <Slide delay={0.3}>
-          <h2 className="text-3xl text-gray-400 mb-6">I build things for web</h2>
+          <h2 className="text-3xl dark:text-gray-400 text-gray-600 mb-6">I build things for web</h2>
         </Slide>
         <Slide delay={0.4}>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg dark:text-gray-400 text-gray-600 mb-8">
             A software engineer who crafts high-scale wonders 🌟. Currently, I'm diving headfirst into the world of AI and machine learning,
             transforming ideas 💡 into meaningful solutions and love to automate everything and anything 🚀
           </p>

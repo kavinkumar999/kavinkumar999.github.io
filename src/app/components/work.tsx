@@ -74,7 +74,7 @@ const ExperienceItem = ({ logo, company, position, start, end, description }: Ex
         {company}
       </motion.h3>
       <motion.h4 
-        className="text-md font-medium text-gray-300"
+        className="text-md font-medium dark:text-gray-300 text-gray-700"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -83,7 +83,7 @@ const ExperienceItem = ({ logo, company, position, start, end, description }: Ex
         {position}
       </motion.h4>
       <motion.p 
-        className="text-sm text-gray-400 mb-4 flex items-center mt-2"
+        className="text-sm dark:text-gray-400 text-gray-600 mb-4 flex items-center mt-2"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -93,7 +93,7 @@ const ExperienceItem = ({ logo, company, position, start, end, description }: Ex
         {start} - <span className={end === 'PRESENT' ? 'text-primary' : ''}>{end}</span>
       </motion.p>
       <motion.p 
-        className="text-sm text-gray-300 mt-2"
+        className="text-sm dark:text-gray-300 text-gray-700 mt-2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
