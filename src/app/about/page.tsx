@@ -1,8 +1,6 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { FaReact, FaNodeJs, FaPython, FaDatabase, FaJava } from 'react-icons/fa'
+import Transition from '../components/animations/transition'
 import { SiTypescript, SiJavascript, SiMongodb, SiPostgresql, SiDocker, SiJenkins, SiSpringboot, SiNextdotjs, SiTailwindcss, SiApachekafka } from 'react-icons/si'
 
 export default function AboutSection() {
@@ -24,24 +22,11 @@ export default function AboutSection() {
     { icon: SiApachekafka, name: 'Apache Kafka', color: 'text-primary-secondary' }
   ]
 
-  const iconAnimation = {
-    scale: [1, 1.1, 1],
-    rotate: [0, 10, -10, 0],
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  }
-
   return (
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold mb-12">About Me</h2>
       <div className="grid md:grid-cols-2 gap-8 items-start">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <Transition delay={0} xInitail={-50}>
           <div className="prose max-w-none">
             <p className="text-lg mb-4">
               Hello! I'm John Doe, a passionate developer with a love for creating
@@ -62,12 +47,8 @@ export default function AboutSection() {
               together or just have a chat about technology!
             </p>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        </Transition>
+        <Transition delay={0.2} xInitail={50}>
           <Image
             src="/placeholder.svg"
             alt="John Doe"
@@ -75,29 +56,20 @@ export default function AboutSection() {
             height={400}
             className="rounded-lg shadow-lg w-full"
           />
-        </motion.div>
+        </Transition>
       </div>
       <div className="mt-8 mb-32">
         <h2 className="text-2xl font-semibold mb-12">Tech Stack</h2>
         <div className="grid grid-cols-4 sm:grid-cols-6 gap-4">
           {techStack.map((tech, index) => {
             const TechIcon = tech.icon;
-
             return (
-              <motion.div
-                key={index}
-                className="flex flex-col items-center"
-                initial={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <motion.div
-                  animate={iconAnimation}
-                >
+              <div key={index} className="flex flex-col items-center">
+                <div>
                   <TechIcon className={`text-3xl mb-2 ${tech.color}`} />
-                </motion.div>
+                </div>
                 <span className="text-sm">{tech.name}</span>
-              </motion.div>
+              </div>
             )
           })}
         </div>

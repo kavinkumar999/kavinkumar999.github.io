@@ -65,7 +65,7 @@ const ExperienceItem = ({ logo, company, position, start, end, description }: Ex
     </motion.div>
     <div className="max-w-2xl">
       <motion.h3 
-        className="text-lg font-semibold text-white"
+        className="text-lg font-semibold"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
