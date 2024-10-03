@@ -54,7 +54,7 @@ export default function AboutSection() {
             alt="John Doe"
             width={400}
             height={400}
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-lg shadow-lg dark:shadow-lg-dark w-full"
           />
         </Transition>
       </div>
