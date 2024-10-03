@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { FaReact, FaNodeJs, FaPython, FaDatabase, FaJava } from 'react-icons/fa'
-import { SiTypescript, SiJavascript, SiMongodb, SiPostgresql, SiDocker, SiJenkins, SiSpringboot, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
+import { SiTypescript, SiJavascript, SiMongodb, SiPostgresql, SiDocker, SiJenkins, SiSpringboot, SiNextdotjs, SiTailwindcss, SiApachekafka } from 'react-icons/si'
 
 export default function AboutSection() {
   const techStack = [
@@ -21,17 +21,8 @@ export default function AboutSection() {
     { icon: SiDocker, name: 'Docker', color: 'text-blue-500' },
     { icon: SiJenkins, name: 'Jenkins', color: 'text-orange-500' },
     { icon: SiTailwindcss, name: 'Tailwind CSS', color: 'text-teal-500' },
+    { icon: SiApachekafka, name: 'Apache Kafka', color: 'text-primary-secondary' }
   ]
-
-  const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: 'reverse',
-      ease: 'easeInOut',
-    },
-  }
 
   const iconAnimation = {
     scale: [1, 1.1, 1],
@@ -94,7 +85,7 @@ export default function AboutSection() {
 
             return (
               <motion.div
-                key={tech.name}
+                key={index}
                 className="flex flex-col items-center"
                 initial={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.1 }}
