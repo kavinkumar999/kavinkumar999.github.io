@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { GithubIcon, ExternalLinkIcon } from "lucide-react"
+import Image from "next/image"
 
 interface Project {
   id: number
@@ -13,6 +14,7 @@ interface Project {
   technologies: string[]
   githubLink: string
   liveLink: string
+  imageUrl: string
 }
 
 const projects: Project[] = [
@@ -22,7 +24,8 @@ const projects: Project[] = [
     description: "A full-stack e-commerce solution with React and Node.js",
     technologies: ["React", "Node.js", "MongoDB", "Express"],
     githubLink: "https://github.com/yourusername/ecommerce-platform",
-    liveLink: "https://ecommerce-platform-demo.vercel.app"
+    liveLink: "https://ecommerce-platform-demo.vercel.app",
+    imageUrl: "/api/placeholder/400/200"
   },
   {
     id: 2,
@@ -30,7 +33,8 @@ const projects: Project[] = [
     description: "Real-time weather application using OpenWeatherMap API",
     technologies: ["React", "API Integration", "CSS3"],
     githubLink: "https://github.com/yourusername/weather-app",
-    liveLink: "https://weather-app-demo.vercel.app"
+    liveLink: "https://weather-app-demo.vercel.app",
+    imageUrl: "/api/placeholder/400/200"
   },
   {
     id: 3,
@@ -38,7 +42,8 @@ const projects: Project[] = [
     description: "Collaborative task manager with real-time updates",
     technologies: ["Vue.js", "Firebase", "Vuex"],
     githubLink: "https://github.com/yourusername/task-manager",
-    liveLink: "https://task-manager-demo.vercel.app"
+    liveLink: "https://task-manager-demo.vercel.app",
+    imageUrl: "/api/placeholder/400/200"
   },
   {
     id: 4,
@@ -46,10 +51,10 @@ const projects: Project[] = [
     description: "Personal portfolio showcasing projects and skills",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/yourusername/portfolio",
-    liveLink: "https://your-portfolio.vercel.app"
+    liveLink: "https://your-portfolio.vercel.app",
+    imageUrl: "/api/placeholder/400/200"
   }
 ]
-
 
 const techStackVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -63,6 +68,7 @@ const techStackVariants = {
     }
   })
 }
+
 export default function ProjectList() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const handleLinkClick = (_url: string) => {
@@ -98,12 +104,21 @@ export default function ProjectList() {
             onHoverEnd={() => setHoveredIndex(null)}
           >
             <Card className="h-full flex flex-col">
+              <div className="relative w-full h-48">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
+                />
+              </div>
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
-              <motion.div 
+                <motion.div 
                   className="flex flex-wrap gap-2 mb-4"
                   initial="hidden"
                   animate="visible"

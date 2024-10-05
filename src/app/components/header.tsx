@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
 
 export default function Headers() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -30,9 +31,9 @@ export default function Headers() {
           </div>
           <nav>
             <ul className="flex items-center space-x-6 font-semibold">
-              <li className='px-2'><Link href="/about">About</Link></li>
-              <li className='px-2'><Link href="/blog">Blog</Link></li>
-              <li className='px-2'><Link href="/projects">Projects</Link></li>
+              <li className='px-2'><Link className={pathname === '/about' ? 'text-primary' : ''} href="/about">About</Link></li>
+              <li className='px-2'><Link className={pathname.startsWith('/blog') ? 'text-primary' : ''} href="/blog">Blog</Link></li>
+              <li className='px-2'><Link className={pathname === '/projects' ? 'text-primary' : ''} href="/projects">Projects</Link></li>
               { mounted && <button className="border p-2.5 rounded-lg text-foreground/60 hover:dark:bg-[#191919] hover:bg-gray-100 md:mx-4 outline-none" onClick={toggleTheme}>
                   {theme === 'dark' ? (
                     <Moon className="w-4 h-4" />
