@@ -125,8 +125,8 @@ export default function BlogSection() {
               >
                 <Link href={`/blog/${article.id}`} passHref>
                   <motion.div 
-                    className="bg-card text-card-foreground rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:shadow-xl group"
-                    whileHover={{ scale: 1.03, y: -5 }}
+                    className="bg-card text-card-foreground rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:shadow-xl dark:hover:shadow-lg-dark group"
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <div className="relative aspect-video overflow-hidden">

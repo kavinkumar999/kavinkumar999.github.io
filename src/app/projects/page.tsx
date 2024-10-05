@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -70,7 +69,6 @@ const techStackVariants = {
 }
 
 export default function ProjectList() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const handleLinkClick = (_url: string) => {
     window.open(_url, '_blank', 'noopener,noreferrer')
   }
@@ -94,14 +92,12 @@ export default function ProjectList() {
       >
         {projects.map((project, index) => (
           <motion.div
-            key={project.id}
+            key={project.id} className="hover:shadow-lg dark:hover:shadow-lg-dark group"
             variants={{
               hidden: { y: 20, opacity: 0 },
               visible: { y: 0, opacity: 1 }
             }}
             whileHover={{ scale: 1.05 }}
-            onHoverStart={() => setHoveredIndex(index)}
-            onHoverEnd={() => setHoveredIndex(null)}
           >
             <Card className="h-full flex flex-col">
               <div className="relative w-full h-48">
@@ -114,7 +110,7 @@ export default function ProjectList() {
                 />
               </div>
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="group-hover:text-primary" >{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
@@ -160,14 +156,6 @@ export default function ProjectList() {
                   Live Demo
                 </Button>
               </CardFooter>
-              {hoveredIndex === index && (
-                <motion.div
-                  className="absolute inset-0 bg-primary/5 rounded-lg pointer-events-none"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                />
-              )}
             </Card>
           </motion.div>
         ))}
