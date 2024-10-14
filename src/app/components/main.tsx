@@ -12,7 +12,7 @@ import HeroSvg from './svg/HeroSvg';
 const socialIcons = [
   { href: "https://linkedin.com/in/kavinkumar999", icon: LinkedIn },
   { href: "https://github.com/kavinkumar999", icon: Github },
-  { href: "https://twitter.com/kavin999", icon: Twitter },
+  { href: "https://twitter.com/kavinkumar999", icon: Twitter },
   { href: "mailto:kavinkumarnkm007@gmail.com", icon: Email },
 ];
 
