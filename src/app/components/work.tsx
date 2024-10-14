@@ -14,9 +14,9 @@ const experiences: Array<ExperienceItem> = [
     },
     company: "Zoho Corporation",
     position: "Software Engineer",
-    start: "SEP 11, 2024",
+    start: "MAR 2021",
     end: "PRESENT",
-    description: "Working with a cross-functional team in a fast-paced environment to build, maintain and test a user-centric fintech solution using modern technologies",
+    description: "",
   },
   {
     logo: {
@@ -26,9 +26,9 @@ const experiences: Array<ExperienceItem> = [
     },
     company: "Aerele Technologies",
     position: "Software Developer Intern",
-    start: "SEP 11, 2024",
-    end: "SEP 11, 2024",
-    description: "Volunteer writer for freeCodeCamp, producing technical articles around topics like nextjs, react, and JavaScript.",
+    start: "SEP 2020",
+    end: "MAR 2021",
+    description: "",
   }
 ];
 

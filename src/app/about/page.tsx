@@ -24,7 +24,7 @@ export default function AboutSection() {
 
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold mb-12">About Me</h2>
+      <h2 className="text-3xl font-bold mb-8">About Me</h2>
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <Transition delay={0} xInitail={-50}>
           <div className="prose max-w-none">

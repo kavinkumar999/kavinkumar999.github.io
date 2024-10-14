@@ -19,39 +19,30 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with React and Node.js",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubLink: "https://github.com/yourusername/ecommerce-platform",
-    liveLink: "https://ecommerce-platform-demo.vercel.app",
-    imageUrl: "/api/placeholder/400/200"
+    title: "Ember Productivity",
+    description: "A VSCode extension designed for Ember.js that simplifies switching between related files, boosting your development efficiency",
+    technologies: ["TypeScript", "VSCode API"],
+    githubLink: "https://github.com/kavinkumar999/ember-productivity",
+    liveLink: "https://marketplace.visualstudio.com/items?itemName=kavinkumar.ember-productivity",
+    imageUrl: "/png/ember-productivity.png"
   },
   {
     id: 2,
-    title: "Weather App",
-    description: "Real-time weather application using OpenWeatherMap API",
-    technologies: ["React", "API Integration", "CSS3"],
-    githubLink: "https://github.com/yourusername/weather-app",
-    liveLink: "https://weather-app-demo.vercel.app",
-    imageUrl: "/api/placeholder/400/200"
+    title: "One Dark Plus",
+    description: "A custom theme for Visual Studio Code inspired by Atom's One Dark theme",
+    technologies: ["TypeScript", "CSS", "VSCode API"],
+    githubLink: "https://github.com/kavinkumar999/one-dark-plus",
+    liveLink: "https://marketplace.visualstudio.com/items?itemName=kavinkumar.one-dark-custom-theme",
+    imageUrl: "/png/one-dark-plus.png"
   },
   {
     id: 3,
-    title: "Task Management System",
-    description: "Collaborative task manager with real-time updates",
-    technologies: ["Vue.js", "Firebase", "Vuex"],
-    githubLink: "https://github.com/yourusername/task-manager",
-    liveLink: "https://task-manager-demo.vercel.app",
-    imageUrl: "/api/placeholder/400/200"
-  },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    description: "Personal portfolio showcasing projects and skills",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/yourusername/portfolio",
-    liveLink: "https://your-portfolio.vercel.app",
-    imageUrl: "/api/placeholder/400/200"
+    title: "Stock Slice",
+    description: "Stock Slice is a tool designed to simplify stock analysis by breaking down large lists of stocks into manageable chunks. Ideal for users of TradingView's free plan",
+    technologies: ["React", "Tailwind CSS", "Typescript"],
+    githubLink: "https://github.com/kavinkumar999/stock-slice",
+    liveLink: "https://kavinkumar999.github.io/stock-slice/",
+    imageUrl: "/png/stock-slice.png"
   }
 ]
 
@@ -75,7 +66,7 @@ export default function ProjectList() {
 
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold mb-6">My Projects</h2>
+      <h2 className="text-3xl font-bold mb-8">Tools & Apps</h2>
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         initial="hidden"
@@ -100,15 +91,15 @@ export default function ProjectList() {
             whileHover={{ scale: 1.05 }}
           >
             <Card className="h-full flex flex-col">
-              <div className="relative w-full h-48">
+                <div className="relative w-full h-48">
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   className="rounded-t-lg"
                 />
-              </div>
+                </div>
               <CardHeader>
                 <CardTitle className="group-hover:text-primary" >{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
