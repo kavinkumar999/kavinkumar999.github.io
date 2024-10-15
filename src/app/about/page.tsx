@@ -29,31 +29,22 @@ export default function AboutSection() {
         <Transition delay={0} xInitail={-50}>
           <div className="prose max-w-none">
             <p className="text-lg mb-4">
-              Hello! I'm John Doe, a passionate developer with a love for creating
-              innovative solutions. With 5 years of experience in the field, I've had
-              the opportunity to work on a wide range of projects, from web applications
-              to mobile apps and everything in between.
+              Hello! My name is <span className='text-primary'>Kavin Kumar</span> and I enjoy creating things that live on the internet. My web development adventure kicked off back in 2015 when I discovered the browser's the inspect option. I used it to change my Facebook name and proudly showcased my 'hacking' skills 😅 to my friends, setting me on the path to web development
             </p>
             <p className="text-lg mb-4">
-              When I'm not coding, you can find me hiking in nature, reading sci-fi
-              novels, or experimenting with new recipes in the kitchen. I believe
-              in continuous learning and always strive to stay up-to-date with the
-              latest technologies and best practices in the ever-evolving world of
-              software development.
+            During my BE degree in college, I immersed myself in the world of competitive programming, which served as a crucial milestone in my journey. Additionally, I acquired web development skills that enabled me to actively participate in various hackathons, offering me invaluable experiences and insights along the way.
             </p>
             <p className="text-lg mb-4">
-              I'm always excited to take on new challenges and collaborate on
-              interesting projects. Feel free to reach out if you'd like to work
-              together or just have a chat about technology!
+            Fast-forward to today, I've working at ZOHO Corporation as a sofware developer. Build & ship various features into zoho payroll app. Keeping in mind paradigms of stability, security and scalability
             </p>
           </div>
         </Transition>
         <Transition delay={0.2} xInitail={50}>
           <Image
-            src="/placeholder.svg"
-            alt="John Doe"
-            width={400}
-            height={400}
+            src="/jpg/photo.jpg"
+            alt="image"
+            width={300}
+            height={300}
             className="rounded-lg shadow-lg dark:shadow-lg-dark w-full"
           />
         </Transition>

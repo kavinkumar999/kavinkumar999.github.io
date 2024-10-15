@@ -132,20 +132,20 @@ export default function BlogSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link href={`/blog/${article.id}`} passHref>
+                <Link href={`/articles/${article.id}`} passHref>
                   <motion.div
                     className="bg-card text-card-foreground rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:shadow-xl dark:hover:shadow-lg-dark group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <div className="relative aspect-video overflow-hidden">
-                      {/* <Image
+                      <Image
                         src={article.image}
                         alt={article.title}
                         layout="fill"
                         objectFit="cover"
                         className="rounded-t-lg transition-transform duration-300 group-hover:scale-110"
-                      /> */}
+                      />
                     </div>
                     <div className="p-4">
                       <Badge className="mb-2 transition-colors duration-300 ease-in-out group-hover:bg-primary group-hover:text-primary-foreground">
