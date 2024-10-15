@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image'
 import { FaReact, FaNodeJs, FaPython, FaDatabase, FaJava } from 'react-icons/fa'
 import Transition from '../components/animations/transition'
