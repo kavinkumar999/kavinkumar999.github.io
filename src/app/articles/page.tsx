@@ -66,9 +66,19 @@ import { CalendarIcon, ClockIcon, Search } from 'lucide-react'
 //     image: "https://images.unsplash.com/photo-1623479322729-28b25c16b011?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VzdGFpbmFibGUlMjBzb2Z0d2FyZXxlbnwwfHwwfHx8MA%3D%3D"
 //   },
 // ]
-const articles: any = [];
+interface Article {
+  id: number;
+  title: string;
+  category: string;
+  date: string;
+  readTime: string;
+  description: string;
+  image: string;
+}
+
+const articles: Array<Article> = [];
 // const categories = ["All", ...new Set(articles.map(article => article.category))]
-const categories: any = [];
+const categories: Array<string> = [];
 
 export default function BlogSection() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -76,10 +86,10 @@ export default function BlogSection() {
   const [filteredArticles, setFilteredArticles] = useState(articles)
 
   useEffect(() => {
-    const results = articles.filter(article =>
+    const results: Article[] = articles.filter(article =>
       article.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedCategory === 'All' || article.category === selectedCategory)
-    )
+    );
     setFilteredArticles(results)
   }, [searchTerm, selectedCategory])
 
