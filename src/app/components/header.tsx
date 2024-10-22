@@ -7,18 +7,40 @@ import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-export default function Headers() {
+const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const toggleTheme = (() => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  })
+  if (!mounted) {
+    return (
+      <div className="h-9 w-9 rounded-lg border p-2.5">
+        <div className="animate-pulse h-4 w-4 bg-gray-200 dark:bg-gray-800 rounded" />
+      </div>
+    );
+  }
+
+  return (
+    <button 
+      className="border p-2.5 rounded-lg text-foreground/60 hover:dark:bg-[#191919] hover:bg-gray-100 transition-colors duration-200 ease-in-out"
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      {theme === 'dark' ? (
+        <Moon className="w-4 h-4" />
+      ) : (
+        <Sun className="w-4 h-4" />
+      )}
+    </button>
+  );
+};
+
+export default function Headers() {
+  const pathname = usePathname();
+
   return (
     <header className="w-full">
       <div className="max-w-7xl mx-auto md:px-16 px-6">
@@ -34,13 +56,7 @@ export default function Headers() {
               <li className='px-2'><Link className={pathname === '/about' ? 'text-primary' : ''} href="/about">About</Link></li>
               <li className='px-2'><Link className={pathname.startsWith('/articles') ? 'text-primary' : ''} href="/articles">Articles</Link></li>
               <li className='px-2'><Link className={pathname === '/projects' ? 'text-primary' : ''} href="/projects">Codes</Link></li>
-              { mounted && <button className="border p-2.5 rounded-lg text-foreground/60 hover:dark:bg-[#191919] hover:bg-gray-100 md:mx-4 outline-none" onClick={toggleTheme}>
-                  {theme === 'dark' ? (
-                    <Moon className="w-4 h-4" />
-                  ) : (
-                    <Sun className="w-4 h-4" />
-                  )}
-              </button> }
+              <ThemeButton></ThemeButton>
             </ul>
           </nav>
         </div>
