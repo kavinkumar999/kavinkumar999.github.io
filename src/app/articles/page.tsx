@@ -69,13 +69,13 @@ export default function BlogSection() {
           >
             {filteredArticles.map((article, index) => (
               <motion.div
-                key={article.id}
+                key={article.slug}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link href={`/articles/${article.id}`} passHref>
+                <Link href={`/articles/${article.slug}`} passHref>
                   <motion.div
                     className="bg-card text-card-foreground rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:shadow-xl dark:hover:shadow-lg-dark group"
                     whileHover={{ scale: 1.05 }}
