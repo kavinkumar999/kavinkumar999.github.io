@@ -29,7 +29,7 @@ export default function BlogSection() {
   return (
     <div className="container mx-auto px-4">
       <div className="max-w-5xl">
-        <h1 className="text-4xl font-bold mb-8 text-left">Articles</h1>
+        <h1 className="text-4xl font-bold mb-8 text-left">Archives</h1>
 
         <div className="mb-8">
           <div className="relative max-w-2xl">
@@ -38,7 +38,7 @@ export default function BlogSection() {
             </div>
             <Input
               type="text"
-              placeholder="Search articles..."
+              placeholder="Search ..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10 pr-4 py-2 w-full text-lg rounded-full border-2 border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-300 ease-in-out"
@@ -75,7 +75,7 @@ export default function BlogSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link href={`/articles/${article.slug}`} passHref>
+                <Link href={`/archives/${article.slug}`} passHref>
                   <motion.div
                     className="bg-card text-card-foreground rounded-lg overflow-hidden shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:shadow-xl dark:hover:shadow-lg-dark group"
                     whileHover={{ scale: 1.05 }}
@@ -125,7 +125,7 @@ export default function BlogSection() {
             exit={{ opacity: 0 }}
             className="text-center text-muted-foreground mt-8"
           >
-            No articles found. Try a different search or category.
+            No archives found. Try a different search or category.
           </motion.p>
         )}
       </div>

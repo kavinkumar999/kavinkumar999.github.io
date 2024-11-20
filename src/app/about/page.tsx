@@ -28,7 +28,7 @@ export default function AboutSection() {
       <h2 className="text-3xl font-bold mb-8">About Me</h2>
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <Transition delay={0} xInitail={-50}>
-          <div className="prose max-w-none">
+          <div className="max-w-none">
             <p className="text-lg mb-4">
               Hello! My name is <span className='text-primary'>Kavin Kumar</span> and I enjoy creating things that live on the internet. My web development adventure kicked off back in 2015 when I discovered the browser's the inspect option. I used it to change my Facebook name and proudly showcased my 'hacking' skills 😅 to my friends, setting me on the path to web development
             </p>
