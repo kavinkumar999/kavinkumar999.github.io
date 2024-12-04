@@ -54,7 +54,6 @@ export default function Headers() {
           <nav>
             <ul className="flex items-center space-x-6 font-semibold">
               <li className='px-2'><Link className={pathname === '/about' ? 'text-primary' : ''} href="/about">About</Link></li>
-              {/* <li className='px-2'><Link className={pathname.startsWith('/archives') ? 'text-primary' : ''} href="/archives">Archives</Link></li> */}
               <li className='px-2'><Link className={pathname === '/projects' ? 'text-primary' : ''} href="/projects">Codes</Link></li>
               <ThemeButton></ThemeButton>
             </ul>
