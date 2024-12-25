@@ -28,7 +28,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "One Dark Plus",
+    title: "One Dark +",
     description: "A custom theme for Visual Studio Code inspired by Atom's One Dark theme",
     technologies: ["TypeScript", "CSS", "VSCode API"],
     githubLink: "https://github.com/kavinkumar999/one-dark-plus",
@@ -37,13 +37,22 @@ const projects: Project[] = [
   },
   {
     id: 3,
+    title: "test case generator",
+    description: "An addon that helps you create tests by recording user interactions in your application. This tool automatically generates test cases based on your actions, making test creation more intuitive and efficient.",
+    technologies: ["ember.js", "typescript"],
+    githubLink: "https://github.com/kavinkumar999/ember-test-recorder",
+    liveLink: "https://github.com/kavinkumar999/ember-test-recorder",
+    imageUrl: "/png/play-button.png"
+  },
+  {
+    id: 4,
     title: "Stock Slice",
     description: "Stock Slice is a tool designed to simplify stock analysis by breaking down large lists of stocks into manageable chunks. Ideal for users of TradingView's free plan",
     technologies: ["React", "Tailwind CSS", "Typescript"],
     githubLink: "https://github.com/kavinkumar999/stock-slice",
     liveLink: "https://kavinkumar999.github.io/stock-slice/",
     imageUrl: "/png/stock-slice.png"
-  }
+  },
 ]
 
 const techStackVariants = {
