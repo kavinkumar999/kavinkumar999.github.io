@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: "An addon that helps you create tests by recording user interactions in your application. This tool automatically generates test cases based on your actions, making test creation more intuitive and efficient.",
     technologies: ["ember.js", "typescript"],
     githubLink: "https://github.com/kavinkumar999/ember-test-recorder",
-    liveLink: "https://github.com/kavinkumar999/ember-test-recorder",
+    liveLink: "https://extraordinary-boba-4b12bc.netlify.app/#/home",
     imageUrl: "/png/play-button.png"
   },
   {
@@ -100,11 +100,11 @@ export default function ProjectList() {
             whileHover={{ scale: 1.05 }}
           >
             <Card className="h-full flex flex-col">
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-48 flex justify-center items-center">
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  layout="fill"
+                  fill={true}
                   objectFit="contain"
                   className="rounded-t-lg"
                 />
