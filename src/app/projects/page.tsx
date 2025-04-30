@@ -75,7 +75,14 @@ export default function ProjectList() {
 
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold mb-8">Tools & Apps</h2>
+      <motion.h2 
+        className="text-4xl font-bold mb-12 bg-gradient-to-r from-primary to-primary-secondary bg-clip-text text-transparent"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Tools & Apps
+      </motion.h2>
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         initial="hidden"

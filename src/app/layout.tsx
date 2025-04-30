@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kavin Kumar",
-  description: "Personal portfolio of Kavin Kumar",
+  description: "Personal Website of Kavin Kumar",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20 mb-20">
+            <main className="max-w-7xl mx-auto md:px-16 px-6 mt-20 mb-20">
               {children}
             </main>
           </ThemeProvider>
