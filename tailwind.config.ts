@@ -14,6 +14,19 @@ const config: Config = {
 			boxShadow: {
         'lg-dark': '0 10px 20px rgba(255, 255, 255, 0.3)',
       },
+      keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
+      },
+      animation: {
+        meteor: "meteor 5s linear infinite",
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
