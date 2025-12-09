@@ -62,7 +62,12 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['kavinkumar.me'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'kavinkumar.me',
+      },
+    ],
     minimumCacheTTL: 60,
     formats: ['image/webp', 'image/avif'],
   },

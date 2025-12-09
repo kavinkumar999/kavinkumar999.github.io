@@ -15,7 +15,7 @@ const experiences: Array<ExperienceItem> = [
     company: "Zoho Corporation",
     position: "Software Engineer",
     start: "MAR 2021",
-    end: "PRESENT",
+    end: "SEP 2025",
     description: "",
   },
   {
