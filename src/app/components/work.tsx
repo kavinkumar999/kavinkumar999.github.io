@@ -8,6 +8,18 @@ import { motion } from 'framer-motion';
 const experiences: Array<ExperienceItem> = [
   {
     logo: {
+      url: "/png/Nextiva.svg",
+      width: 100,
+      height: 60
+    },
+    company: "Nextiva",
+    position: "Software Engineer · Remote",
+    start: "SEP 2025",
+    end: "PRESENT",
+    description: "",
+  },
+  {
+    logo: {
       url: "/png/zoho-dark.svg",
       width: 100,
       height: 60

@@ -31,8 +31,8 @@ export default function Main() {
         </Slide>
         <Slide delay={0.4}>
           <p className="text-lg dark:text-gray-400 text-gray-600 mb-8">
-            A software engineer who crafts high-scale wonders 🌟. Currently, I'm diving headfirst into the world of AI and machine learning,
-            transforming ideas 💡 into meaningful solutions and love to automate everything and anything 🚀
+            Software Engineer at <span className="text-primary font-semibold">Nextiva</span> · <span className="font-semibold">Ex-Zoho</span>. I craft high-scale web applications 🌟, explore AI/ML,
+            and love automating everything 🚀
           </p>
         </Slide>
         <Slide delay={0.4}>

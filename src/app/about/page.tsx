@@ -40,13 +40,16 @@ export default function AboutSection() {
         <Transition delay={0} xInitail={-50}>
           <div className="max-w-xl space-y-6">
             <p className="text-lg leading-relaxed">
-              Hello! My name is <span className='text-primary font-semibold'>Kavin Kumar</span> and I enjoy creating things that live on the internet. My web development adventure kicked off back in 2015 when I discovered the browser's the inspect option. I used it to change my Facebook name and proudly showcased my 'hacking' skills 😅 to my friends, setting me on the path to web development.
+              Hello! I'm <span className='text-primary font-semibold'>Kavin Kumar</span>, a Software Engineer at <span className='font-semibold'>Nextiva</span> and <span className='text-primary font-semibold'>Ex-Zoho</span>. I'm passionate about building scalable web applications and crafting seamless user experiences that make a real impact.
             </p>
             <p className="text-lg leading-relaxed">
-              During my BE degree in college, I immersed myself in the world of competitive programming, which served as a crucial milestone in my journey. Additionally, I acquired web development skills that enabled me to actively participate in various hackathons, offering me invaluable experiences and insights along the way.
+              My journey into tech started back in 2015 when I discovered the browser's inspect tool — I used it to "hack" my Facebook name and impress my friends 😅. That curiosity sparked a deep interest in web development that's only grown stronger over the years.
             </p>
             <p className="text-lg leading-relaxed">
-              Fast-forward to today, I'm working at ZOHO Corporation as a software developer. Build & ship various features into zoho payroll app, keeping in mind paradigms of stability, security and scalability.
+              During college, I dove into competitive programming and participated in hackathons, which shaped my problem-solving mindset. At Zoho, I spent 5+ years building and shipping features for Zoho Payroll, focusing on stability, security, and scale.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Now at Nextiva, I'm exploring new challenges while continuing to dive into AI Engineering and automation, always looking to turn ideas into meaningful solutions 
             </p>
           </div>
         </Transition>
