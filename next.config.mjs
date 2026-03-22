@@ -7,7 +7,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'https://kavinkumar.me',
+            value: 'https://kavinkumar999.github.io',
           },
           {
             key: 'Access-Control-Allow-Methods',
@@ -65,7 +65,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'kavinkumar.me',
+        hostname: 'kavinkumar999.github.io',
       },
     ],
     minimumCacheTTL: 60,
