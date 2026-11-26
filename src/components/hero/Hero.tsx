@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { HERO_TITLE, PROFILE, RESUME_FILE_NAME } from "@/lib/data";
 import { prefersReducedMotion } from "@/lib/hooks";
 import { scrollToTarget } from "@/lib/scroll";
@@ -14,14 +14,58 @@ export default function Hero() {
   // idle: silent looping ambient clip; playing: intro playing once with sound; stopped: finished, frozen on first frame
   const mode = useRef<"idle" | "playing" | "stopped">("idle");
 
+  // Play the intro once, with sound, from the start. If the browser refuses (autoplay policy), fall back to the
+  // silent ambient loop and report failure so the caller can retry on a user gesture.
+  const startIntro = useCallback(async (): Promise<boolean> => {
+    const v = videoRef.current;
+    if (!v) return false;
+    mode.current = "playing";
+    v.loop = false;
+    v.muted = false;
+    v.currentTime = 0;
+    try {
+      await v.play();
+      setSoundOn(true);
+      return true;
+    } catch {
+      mode.current = "idle";
+      v.loop = true;
+      v.muted = true;
+      v.play().catch(() => {});
+      setSoundOn(false);
+      return false;
+    }
+  }, []);
+
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     reduced.current = prefersReducedMotion();
     v.muted = true;
     v.loop = true;
+
+    // Browsers block sound until the user interacts with the page. So: try unmuted autoplay; if blocked,
+    // keep the silent loop and start the intro with voice on the first click or key press while the hero is in view.
+    let cancelled = false;
+    const onGesture = (e: Event) => {
+      if ((e.target as Element | null)?.closest?.("[data-sound-btn]")) return; // the button has its own handler
+      if (mode.current !== "idle" || !visible.current) return;
+      disarm();
+      void startIntro();
+    };
+    const arm = () => {
+      document.addEventListener("click", onGesture);
+      document.addEventListener("keydown", onGesture);
+    };
+    const disarm = () => {
+      document.removeEventListener("click", onGesture);
+      document.removeEventListener("keydown", onGesture);
+    };
     if (reduced.current) v.pause();
-    else v.play().catch(() => {});
+    else
+      void startIntro().then((ok) => {
+        if (!ok && !cancelled) arm();
+      });
 
     const onEnded = () => {
       mode.current = "stopped";
@@ -43,10 +87,12 @@ export default function Hero() {
     );
     io.observe(v);
     return () => {
+      cancelled = true;
+      disarm();
       v.removeEventListener("ended", onEnded);
       io.disconnect();
     };
-  }, []);
+  }, [startIntro]);
 
   // play button: play the intro once, with sound, from the start; press again while playing to stop it
   const toggle = () => {
@@ -60,11 +106,7 @@ export default function Hero() {
       setSoundOn(false);
       return;
     }
-    mode.current = "playing";
-    v.loop = false;
-    v.muted = false;
-    v.currentTime = 0;
-    v.play().then(() => setSoundOn(true)).catch(() => { mode.current = "stopped"; v.muted = true; setSoundOn(false); });
+    void startIntro();
   };
 
   const go = (id: string) => (e: React.MouseEvent) => {
