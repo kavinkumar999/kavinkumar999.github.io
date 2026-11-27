@@ -87,18 +87,20 @@ export default function Contact() {
                 </li>
               ))}
             </ul>
-            <svg className="ct-badge" viewBox="0 0 160 160" role="img" aria-label="Say hello">
-              <defs>
-                <path id="ct-circ" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0" />
-              </defs>
-              <g className="ct-spin">
-                <text fontSize="12.5" letterSpacing="3.4" fill="#0d0d0d" fontFamily="var(--f-mono), monospace">
-                  <textPath href="#ct-circ">SAY HELLO · SAY HELLO · SAY HELLO · </textPath>
-                </text>
-              </g>
-              <circle cx="80" cy="80" r="26" fill="#0d0d0d" />
-              <path d="M70 80h20m-7-7 7 7-7 7" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <a className="ct-badge-link" href={`mailto:${PROFILE.email}?subject=${encodeURIComponent(`Hello ${PROFILE.firstName}`)}`} aria-label={`Say hello: email ${PROFILE.email}`}>
+              <svg className="ct-badge" viewBox="0 0 160 160" aria-hidden="true">
+                <defs>
+                  <path id="ct-circ" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0" />
+                </defs>
+                <g className="ct-spin">
+                  <text fontSize="12.5" letterSpacing="3.4" fill="#0d0d0d" fontFamily="var(--f-mono), monospace">
+                    <textPath href="#ct-circ">SAY HELLO · SAY HELLO · SAY HELLO · </textPath>
+                  </text>
+                </g>
+                <circle className="ct-dot" cx="80" cy="80" r="26" fill="#0d0d0d" />
+                <path className="ct-arrow" d="M70 80h20m-7-7 7 7-7 7" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
         <style>{`
@@ -122,8 +124,15 @@ export default function Contact() {
           .ct-lt { font-size: clamp(16px,1.6vw,22px); font-weight: 600; letter-spacing: -.02em; overflow-wrap: anywhere; }
           .ct-ar { transition: transform .5s var(--ease); }
           .ct-links a:hover .ct-ar { transform: translate(3px,-3px); }
-          .ct-badge { width: clamp(120px,14vw,170px); height: auto; flex: none; }
-          .ct-spin { transform-origin: 80px 80px; animation: ct-rot 22s linear infinite; }
+          .ct-badge { display: block; width: clamp(120px,14vw,170px); height: auto; }
+          .ct-badge-link { flex: none; display: block; border-radius: 50%; }
+          .ct-badge-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
+          .ct-spin { transform-origin: 80px 80px; animation: ct-rot 22s linear infinite; transition: transform .6s var(--ease); }
+          .ct-dot { transform-origin: 80px 80px; transition: transform .5s var(--ease); }
+          .ct-arrow { transition: transform .5s var(--ease); }
+          .ct-badge-link:hover .ct-spin { animation-duration: 6s; }
+          .ct-badge-link:hover .ct-dot { transform: scale(1.12); }
+          .ct-badge-link:hover .ct-arrow { transform: translateX(3px); }
           @keyframes ct-rot { to { transform: rotate(360deg); } }
           .ct-foot { border-top: 1px solid var(--line); padding-block: 24px; font-size: 14px; color: var(--mute); }
           .ct-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; align-items: center; }
@@ -135,7 +144,6 @@ export default function Contact() {
         <div className="wrap">
           <span>© {new Date().getFullYear()} {PROFILE.name}</span>
           <button type="button" onClick={() => scrollToTarget(0)}>Back to top ↑</button>
-          <span>Built with Next.js</span>
         </div>
       </footer>
     </>
