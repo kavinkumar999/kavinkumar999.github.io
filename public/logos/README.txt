@@ -1,0 +1,3 @@
+Logos in this folder (*.svg) are from the devicon project (https://devicon.dev, MIT licence, see LICENSE-devicon.txt). Each logo is a trademark of its respective owner and is used here only to identify the technology. lnrs.webp (LexisNexis Risk Solutions) and srm.webp (SRM Institute of Science and Technology) were supplied by the site owner.
+
+rust, pytorch, huggingface, fastapi and redis are also from devicon. langchain, mlflow, weightsandbiases and qdrant are from the Simple Icons project (https://simpleicons.org, CC0 1.0 public domain); their single-colour paths were given each brand's official colour. All remain trademarks of their respective owners.

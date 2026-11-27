@@ -1,24 +1,22 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-/coverage
-
 # next.js
 /.next/
 /out/
+next-env.d.ts
 
-# production
-/build
+# testing
+/coverage
 
 # misc
 .DS_Store
 *.pem
+.vscode/
+*.tsbuildinfo
 
 # debug
 npm-debug.log*
@@ -31,6 +29,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# raw sources for scripts/build-hero-assets.py (generated outputs live in /public)
+/intro.mp4
+/id card.jpeg
+/portrait-secret.*
+Gemini_Generated_Image_*.png
+__pycache__/
