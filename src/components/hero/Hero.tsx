@@ -6,6 +6,10 @@ import { scrollToTarget } from "@/lib/scroll";
 import { asset } from "@/lib/asset";
 import Button from "@/components/ui/Button";
 
+// Silhouette of the person (see scripts/build-hero-video.py). Makes the video opaque over the ghost text and
+// transparent elsewhere. A white shirt is lighter than the ghost text, so mix-blend-mode: darken let letters show through it.
+const MASK_URL = asset("/hero/hero-mask.png");
+
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [soundOn, setSoundOn] = useState(false); // true while the intro is playing once, with sound
@@ -183,7 +187,9 @@ export default function Hero() {
         .hero-grid { position: relative; width: 100%; max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto;
           padding-inline: var(--gutter); display: grid; grid-template-columns: 1fr; justify-items: center; }
         .hero-stage { position: relative; order: 1; width: min(100%, calc(62svh * .8)); }
-        .hero-video { width: 100%; height: auto; aspect-ratio: 768 / 960; object-fit: cover; mix-blend-mode: darken; background: transparent; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+        .hero-video { width: 100%; height: auto; aspect-ratio: 768 / 960; object-fit: cover; background: transparent;
+          -webkit-mask-image: url(${MASK_URL}); mask-image: url(${MASK_URL}); -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+          -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
         .hero-copy { order: 2; position: relative; z-index: 2; width: 100%; margin-top: 8px; padding-bottom: 56px; text-align: left; }
         .hero-eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin-bottom: 16px; }
         .hero-h1 { font-weight: 700; letter-spacing: -0.045em; line-height: 1; font-size: clamp(44px, 12vw, 64px); }

@@ -23,7 +23,9 @@ Replace these assets with your own (they are still placeholders from the design 
 | `public/og.jpg`, `icon.png`, `favicon.ico` | Share image and icons |
 | `public/cv.pdf` | Résumé download |
 
-`scripts/build-hero-assets.py` regenerates the hero video, portrait, share image and icons from `intro.mp4` and a photo (needs ffmpeg, numpy and Pillow).
+`scripts/build-hero-video.py` turns a raw `intro.mp4` (project root, gitignored) into `public/hero/hero.mp4`, `hero.webm` and `hero-mask.png`. The mask is the person's silhouette: it makes the video opaque in front of the big ghost name and transparent elsewhere (a white shirt is lighter than the ghost text, so a blend mode alone lets the letters show through it). Needs ffmpeg, numpy, Pillow, onnxruntime and the `u2net_human_seg.onnx` model; see the script's docstring. Re-run it whenever you swap the video, and check that it prints `(ok)` on the safety line.
+
+The portrait, share image (`og.jpg`), icons and `cv.pdf` are plain files in `public/`; replace them directly.
 
 New skill logos go in `public/logos/` and get registered in `src/components/ui/TechLogo.tsx`.
 

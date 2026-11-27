@@ -34,3 +34,4 @@ yarn-error.log*
 /id card.jpeg
 /portrait-secret.*
 Gemini_Generated_Image_*.png
+__pycache__/
