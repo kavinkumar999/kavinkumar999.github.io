@@ -8,13 +8,13 @@ export const PROFILE = {
   name: "Kavin Kumar",
   firstName: "Kavin",
   initials: "KK",
-  role: "Software Engineer",
+  role: "Senior Software Engineer",
   /** Hero headline. The last word is accented, the rest sits on the first line. */
-  heroTitle: "Software Engineer",
-  company: "Nextiva",
-  since: "Sep 2025",
-  location: "Remote",
-  email: "kavinkumarnkm007@gmail.com",
+  heroTitle: "Senior Software Engineer",
+  company: "Walmart",
+  since: "Sep 2026",
+  location: "Chennai, India",
+  email: "kavinkumar21k@gmail.com",
   /** Optional: leave both empty to hide the phone row. */
   phone: "",
   phoneHref: "",
@@ -22,7 +22,7 @@ export const PROFILE = {
   linkedin: "https://linkedin.com/in/kavinkumar999",
   resume: asset("/cv.pdf"),
   resumeSummary:
-    "Software Engineer at Nextiva, previously 5+ years at Zoho building and shipping features for Zoho Payroll with a focus on stability, security and scale. I craft high-scale web applications, dive into AI engineering and love automating everything.",
+    "Senior Software Engineer at Walmart, previously at Nextiva and 6+ years at Zoho building and shipping features for Zoho Payroll with a focus on stability, security and scale. I craft high-scale web applications, dive into AI engineering and love automating boring stuff.",
   /** Pull quote in the About section. `accent` is rendered highlighted after `lead`. */
   tagline: { lead: "Making the impossible possible using 1's and", accent: "0's." },
 } as const;
@@ -57,7 +57,7 @@ export const NAV: NavItem[] = (["about", "skills", "work", "experience", "achiev
 }));
 
 /* ---------- Skills ---------- */
-export type SkillFamily = "Frameworks" | "Languages" | "Databases" | "Tools";
+export type SkillFamily = "Languages" | "AI & LLMs" | "LLMOps" | "Frameworks" | "Databases" | "Tools";
 
 export interface Skill {
   /** Logo key for <TechLogo name=... /> (brand file in /public/logos or a concept icon). */
@@ -79,26 +79,47 @@ export interface SkillGroup {
 type RawSkill = Omit<Skill, "number" | "family">;
 /* Family order is the order of the keys below; skills are numbered across the whole table. */
 const RAW: Record<SkillFamily, RawSkill[]> = {
+  Languages: [
+    { logo: "java", name: "Java", symbol: "Ja" },
+    { logo: "rust", name: "Rust", symbol: "Ru" },
+    { logo: "python", name: "Python", symbol: "Py" },
+    { logo: "typescript", name: "TypeScript", symbol: "Ts" },
+    { logo: "javascript", name: "JavaScript", symbol: "Js" },
+    { logo: "sql", name: "SQL", symbol: "Sq" },
+  ],
+  "AI & LLMs": [
+    { logo: "pytorch", name: "PyTorch", symbol: "Pt" },
+    { logo: "huggingface", name: "Hugging Face", symbol: "Hf" },
+    { logo: "langchain", name: "LangChain", symbol: "Lc" },
+    { logo: "llamaindex", name: "LlamaIndex", symbol: "Li" },
+    { logo: "rag", name: "RAG", symbol: "Rg" },
+    { logo: "agents", name: "AI Agents", symbol: "Ag" },
+  ],
+  LLMOps: [
+    { logo: "mlflow", name: "MLflow", symbol: "Ml" },
+    { logo: "weightsandbiases", name: "Weights & Biases", symbol: "Wb" },
+    { logo: "opentelemetry", name: "OpenTelemetry", symbol: "Ot" },
+    { logo: "prometheus", name: "Prometheus", symbol: "Pm" },
+    { logo: "grafana", name: "Grafana", symbol: "Gf" },
+    { logo: "evals", name: "LLM Evals", symbol: "Ev" },
+  ],
   Frameworks: [
     { logo: "nextjs", name: "Next.js", symbol: "Nx" },
     { logo: "react", name: "React", symbol: "Re" },
     { logo: "nodejs", name: "Node.js", symbol: "No" },
     { logo: "spring", name: "Spring Boot", symbol: "Sb" },
     { logo: "tailwindcss", name: "Tailwind CSS", symbol: "Tw" },
-  ],
-  Languages: [
-    { logo: "typescript", name: "TypeScript", symbol: "Ts" },
-    { logo: "javascript", name: "JavaScript", symbol: "Js" },
-    { logo: "python", name: "Python", symbol: "Py" },
-    { logo: "java", name: "Java", symbol: "Ja" },
-    { logo: "sql", name: "SQL", symbol: "Sq" },
+    { logo: "fastapi", name: "FastAPI", symbol: "Fa" },
   ],
   Databases: [
     { logo: "mongodb", name: "MongoDB", symbol: "Mo" },
     { logo: "postgresql", name: "PostgreSQL", symbol: "Pg" },
+    { logo: "redis", name: "Redis", symbol: "Rd" },
+    { logo: "qdrant", name: "Qdrant", symbol: "Qd" },
   ],
   Tools: [
     { logo: "docker", name: "Docker", symbol: "Do" },
+    { logo: "kubernetes", name: "Kubernetes", symbol: "Ku" },
     { logo: "jenkins", name: "Jenkins", symbol: "Je" },
     { logo: "apachekafka", name: "Apache Kafka", symbol: "Ka" },
   ],
@@ -124,10 +145,17 @@ export interface ExperienceItem {
 /** Most recent first. */
 export const EXPERIENCE: ExperienceItem[] = [
   {
+    id: "walmart",
+    role: "Senior Software Engineer",
+    company: "Walmart",
+    period: "Sep 2026 \u2013 Present",
+    bullets: [],
+  },
+  {
     id: "nextiva",
     role: "Software Engineer",
     company: "Nextiva (Remote)",
-    period: "Sep 2025 \u2013 Present",
+    period: "Sep 2025 \u2013 Sep 2026",
     bullets: ["Exploring new challenges while diving deeper into AI engineering and automation, turning ideas into meaningful solutions."],
   },
   {

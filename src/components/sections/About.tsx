@@ -26,7 +26,6 @@ export default function About() {
             {PROFILE.resumeSummary}
           </p>
           <div className="about-btns rv" style={{ ["--i" as string]: 2 }}>
-            <Button href={PROFILE.resume} download variant="primary">Résumé</Button>
             <Button href={PROFILE.github} external variant="secondary">GitHub</Button>
             <Button href={PROFILE.linkedin} external variant="secondary">LinkedIn</Button>
           </div>

@@ -14,6 +14,9 @@ export const BRAND: Record<string, string> = {
   react: "/logos/react.svg", nextjs: "/logos/nextjs.svg", nodejs: "/logos/nodejs.svg", typescript: "/logos/typescript.svg",
   javascript: "/logos/javascript.svg", java: "/logos/java.svg", spring: "/logos/spring.svg", tailwindcss: "/logos/tailwindcss.svg",
   apachekafka: "/logos/apachekafka.svg",
+  rust: "/logos/rust.svg", pytorch: "/logos/pytorch.svg", huggingface: "/logos/huggingface.svg", fastapi: "/logos/fastapi.svg",
+  redis: "/logos/redis.svg", langchain: "/logos/langchain.svg", mlflow: "/logos/mlflow.svg",
+  weightsandbiases: "/logos/weightsandbiases.svg", qdrant: "/logos/qdrant.svg",
 };
 
 const P = { fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -69,6 +72,34 @@ export const CONCEPT: Record<string, ReactElement> = {
       <rect x="13" y="13" width="22" height="22" rx="3" />
       <rect x="19" y="19" width="10" height="10" rx="1.5" />
       <path d="M19 7v6M29 7v6M19 35v6M29 35v6M7 19h6M7 29h6M35 19h6M35 29h6" />
+    </g>
+  ),
+  llamaindex: (
+    <g {...P}>
+      <path d="M24 8l16 8-16 8-16-8z" />
+      <path d="M8 24l16 8 16-8M8 32l16 8 16-8" />
+    </g>
+  ),
+  rag: (
+    <g {...P}>
+      <path d="M13 6h15l8 8v10M13 6v36h11M28 6v8h8" />
+      <path d="M19 22h10M19 28h5" />
+      <circle cx="33" cy="35" r="6" /><path d="M37.5 39.5L42 44" />
+    </g>
+  ),
+  agents: (
+    <g {...P}>
+      <rect x="11" y="17" width="26" height="20" rx="4" />
+      <path d="M24 17v-6" /><circle cx="24" cy="8" r="2.5" />
+      <circle cx="18" cy="26" r="1.6" /><circle cx="30" cy="26" r="1.6" />
+      <path d="M19 32h10M6 24v6M42 24v6" />
+    </g>
+  ),
+  evals: (
+    <g {...P}>
+      <rect x="10" y="9" width="28" height="34" rx="3" />
+      <path d="M18 9V6h12v3" />
+      <path d="M16 21l2.5 2.5L23 19M27 21h6M16 33l2.5 2.5L23 31M27 33h6" />
     </g>
   ),
 };

@@ -89,7 +89,7 @@ export default function Skills() {
                   </ul>
                 </>
               ) : (
-                <p className="sk-used-none">Part of my {active.family.toLowerCase()} toolkit.</p>
+                <p className="sk-used-none">Part of my toolkit.</p>
               )}
             </div>
           </aside>
