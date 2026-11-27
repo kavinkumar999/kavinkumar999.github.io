@@ -5,13 +5,17 @@ import { prefersReducedMotion } from "@/lib/hooks";
 import { scrollToTarget } from "@/lib/scroll";
 import { asset } from "@/lib/asset";
 import Button from "@/components/ui/Button";
-
-// Silhouette of the person (see scripts/build-hero-video.py). Makes the video opaque over the ghost text and
-// transparent elsewhere. A white shirt is lighter than the ghost text, so mix-blend-mode: darken let letters show through it.
-const MASK_URL = asset("/hero/hero-mask.png");
+import { useAlphaVideo } from "./useAlphaVideo";
+import { useParallax } from "./useParallax";
 
 export default function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  // The clip is colour | matte side by side; the canvas shows the person opaque with a transparent surround,
+  // so the ghost name is genuinely behind them (see scripts/build-hero-video.py).
+  const alpha = useAlphaVideo(videoRef, canvasRef);
+  useParallax(heroRef);
   const [soundOn, setSoundOn] = useState(false); // true while the intro is playing once, with sound
   const [needsGesture, setNeedsGesture] = useState(false); // browser blocked autoplay-with-sound: waiting for a click or key
   const reduced = useRef(false);
@@ -125,7 +129,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="hero" aria-label="Introduction">
+    <section ref={heroRef} id="hero" className="hero" aria-label="Introduction">
       <div className="hero-ghost" aria-hidden="true">{PROFILE.firstName.toUpperCase()}</div>
 
       <div className="hero-grid">
@@ -144,18 +148,27 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-stage">
+        <div className={`hero-stage${alpha === "fallback" ? " is-fallback" : ""}`}>
           <video
             ref={videoRef}
             className="hero-video"
             muted
             playsInline
             preload="auto"
-            aria-label={`Animated portrait of ${PROFILE.name} introducing himself`}
+            aria-hidden="true"
+            tabIndex={-1}
           >
             <source src={asset("/hero/hero.webm")} type="video/webm" />
             <source src={asset("/hero/hero.mp4")} type="video/mp4" />
           </video>
+          <canvas
+            ref={canvasRef}
+            className="hero-canvas"
+            width={768}
+            height={960}
+            role="img"
+            aria-label={`Animated portrait of ${PROFILE.name} introducing himself`}
+          />
           <button
             type="button"
             data-sound-btn
@@ -181,15 +194,21 @@ export default function Hero() {
 
       <style>{`
         .hero { position: relative; overflow: clip; padding-top: calc(var(--nav-h) + 8px); min-height: 100svh; }
-        .hero-ghost { position: absolute; left: 50%; top: calc(var(--nav-h) + 2svh); transform: translateX(-50%); z-index: 0;
+        .hero-ghost { position: absolute; left: 50%; top: calc(var(--nav-h) + 2svh); z-index: 0;
+          transform: translate3d(calc(-50% + var(--px, 0) * 12px), calc(var(--py, 0) * 6px), 0); will-change: transform;
           font-weight: 800; letter-spacing: -0.05em; line-height: .8; font-size: clamp(110px, 24vw, 380px); color: #e4e1da;
           user-select: none; pointer-events: none; white-space: nowrap; }
         .hero-grid { position: relative; width: 100%; max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto;
           padding-inline: var(--gutter); display: grid; grid-template-columns: 1fr; justify-items: center; }
         .hero-stage { position: relative; order: 1; width: min(100%, calc(62svh * .8)); }
-        .hero-video { width: 100%; height: auto; aspect-ratio: 768 / 960; object-fit: cover; background: transparent;
-          -webkit-mask-image: url(${MASK_URL}); mask-image: url(${MASK_URL}); -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
-          -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+        /* The <video> is the source (sound, timing, sizing); the canvas on top is what you see. */
+        .hero-video { display: block; width: 100%; height: auto; aspect-ratio: 768 / 960; object-fit: cover; opacity: 0; pointer-events: none; }
+        .hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+          transform: translate3d(calc(var(--px, 0) * -16px), calc(var(--py, 0) * -8px), 0); will-change: transform; }
+        /* No WebGL: show the plain colour half of the clip, blended into the page (the old look: letters can show through the shirt). */
+        .hero-stage.is-fallback .hero-video { opacity: 1; object-position: left center; mix-blend-mode: darken;
+          -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+        .hero-stage.is-fallback .hero-canvas { display: none; }
         .hero-copy { order: 2; position: relative; z-index: 2; width: 100%; margin-top: 8px; padding-bottom: 56px; text-align: left; }
         .hero-eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin-bottom: 16px; }
         .hero-h1 { font-weight: 700; letter-spacing: -0.045em; line-height: 1; font-size: clamp(44px, 12vw, 64px); }
