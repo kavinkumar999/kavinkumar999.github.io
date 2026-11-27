@@ -2,7 +2,9 @@ name: Build Deployment
 
 on:
   push:
-    branches: [master]
+    # The branch that is live on GitHub Pages. To switch designs, change this (and the branch under
+    # Settings > Environments > github-pages > Deployment branches), or run the workflow by hand.
+    branches: [develop]
   workflow_dispatch:
 
 permissions:
