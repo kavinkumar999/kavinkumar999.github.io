@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/asset";
-import { EDUCATION, PROFILE, PROJECTS } from "@/lib/data";
+import { EDUCATION, HERO_TITLE, PROFILE, PROJECTS } from "@/lib/data";
 import { prefersReducedMotion } from "@/lib/hooks";
 
 /* Deterministic barcode bar widths from a seed string (decorative only). */
@@ -19,6 +19,8 @@ function bars(seed: string): { x: number; w: number }[] {
   return out;
 }
 const BARS = bars(PROFILE.name);
+const STRAP_TEXT = `${PROFILE.name} \u00b7 ${PROFILE.role}`.toUpperCase();
+const BAND_TEXT = `${HERO_TITLE.accent} Profile`.toUpperCase();
 
 const BACK_LINES = [
   `${PROFILE.role} at ${PROFILE.company}`,
@@ -96,7 +98,7 @@ export default function IdCard() {
               <span key={k}>
                 {Array.from({ length: 6 }).map((_, i) => (
                   <b key={i}>
-                    AJAY B <i>·</i> SYSTEMS ENGINEER III (SRE) <i>·</i>
+                    {STRAP_TEXT} <i>·</i>
                   </b>
                 ))}
               </span>
@@ -129,7 +131,7 @@ export default function IdCard() {
             <div className="idc-face idc-front" aria-hidden={flipped}>
               <div className="idc-band">
                 <span className="idc-slot" />
-                <span className="mono">SRE PROFILE</span>
+                <span className="mono">{BAND_TEXT}</span>
               </div>
               <div className="idc-photo">
                 <div className="idc-halo" />
