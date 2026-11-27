@@ -9,6 +9,7 @@ import Button from "@/components/ui/Button";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [soundOn, setSoundOn] = useState(false); // true while the intro is playing once, with sound
+  const [needsGesture, setNeedsGesture] = useState(false); // browser blocked autoplay-with-sound: waiting for a click or key
   const reduced = useRef(false);
   const visible = useRef(true);
   // idle: silent looping ambient clip; playing: intro playing once with sound; stopped: finished, frozen on first frame
@@ -26,6 +27,7 @@ export default function Hero() {
     try {
       await v.play();
       setSoundOn(true);
+      setNeedsGesture(false);
       return true;
     } catch {
       mode.current = "idle";
@@ -48,7 +50,8 @@ export default function Hero() {
     // keep the silent loop and start the intro with voice on the first click or key press while the hero is in view.
     let cancelled = false;
     const onGesture = (e: Event) => {
-      if ((e.target as Element | null)?.closest?.("[data-sound-btn]")) return; // the button has its own handler
+      // Clicks on buttons/links mean "do that thing", not "play the intro" (and the sound button has its own handler).
+      if ((e.target as Element | null)?.closest?.("a, button, input, textarea, select, [role='button']")) return;
       if (mode.current !== "idle" || !visible.current) return;
       disarm();
       void startIntro();
@@ -64,7 +67,9 @@ export default function Hero() {
     if (reduced.current) v.pause();
     else
       void startIntro().then((ok) => {
-        if (!ok && !cancelled) arm();
+        if (ok || cancelled) return;
+        setNeedsGesture(true);
+        arm();
       });
 
     const onEnded = () => {
@@ -150,7 +155,7 @@ export default function Hero() {
           <button
             type="button"
             data-sound-btn
-            className="hero-sound"
+            className={`hero-sound${needsGesture ? " is-pinging" : ""}`}
             aria-label={soundOn ? "Stop intro" : "Play intro once"}
             aria-pressed={soundOn}
             onClick={toggle}
@@ -161,6 +166,7 @@ export default function Hero() {
               <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor" /></svg>
             )}
           </button>
+          {needsGesture && <p className="hero-hint mono" aria-hidden="true">Click to hear my intro</p>}
         </div>
 
         <div className="hero-meta rv" style={{ ["--i" as string]: 4 }}>
@@ -187,6 +193,8 @@ export default function Hero() {
         .hero-sound { position: absolute; right: 4%; bottom: 6%; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
           background: var(--ink); color: #fff; transition: transform .4s var(--ease), background .4s var(--ease); z-index: 2; }
         .hero-sound:hover { transform: scale(1.08); background: #2a2a2a; }
+        .hero-hint { position: absolute; right: 4%; bottom: calc(6% + 58px); z-index: 2; margin: 0; padding: 7px 12px; border-radius: 999px; white-space: nowrap;
+          font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); background: rgba(255,255,255,.88); box-shadow: inset 0 0 0 1px var(--line); }
         .hero-sound.is-pinging::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 0 rgba(13,13,13,.45);
           animation: hero-ping 1.8s var(--ease) infinite; pointer-events: none; }
         @keyframes hero-ping { 0% { box-shadow: 0 0 0 0 rgba(13,13,13,.4); } 80%, 100% { box-shadow: 0 0 0 18px rgba(13,13,13,0); } }
